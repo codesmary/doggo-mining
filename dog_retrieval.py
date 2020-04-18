@@ -73,8 +73,7 @@ class PetAPI(OAuthAPI):
                 'good_with_cats': environment_factors.get('cats', 'N/A'),
                 'unknown_breed': breeds.get('unknown', 'N/A'),
                 'primary_breed': breeds.get('primary', 'N/A'),
-                'secondary_breed': breeds.get('secondary', 'N/A'),
-                'tertiary_breed': breeds.get('tertiary', 'N/A')
+                'secondary_breed': breeds.get('secondary', 'N/A')
             }
             animals.append(new_animal)
         return animals
@@ -102,8 +101,7 @@ def populate_database(pets):
             good_with_cats=pet['good_with_cats'],
             unknown_breed=pet['unknown_breed'],
             primary_breed=pet['primary_breed'],
-            secondary_breed=pet['secondary_breed'],
-            tertiary_breed=pet['tertiary_breed']
+            secondary_breed=pet['secondary_breed']
         ))
 
     session.commit()
@@ -114,7 +112,7 @@ def get_posts():
 
 def main():
     pet_api = PetAPI()
-    pets = pet_api.get_animals(pages=100)
+    pets = pet_api.get_animals(pages=20)
     populate_database(pets)
     pet_api.close()
 

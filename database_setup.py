@@ -21,7 +21,6 @@ class Pet(Base):
     unknown_breed = Column(Boolean)
     primary_breed = Column(String(500))
     secondary_breed = Column(String(500))
-    tertiary_breed = Column(String(500))
 
 engine = create_engine('sqlite:///pets.db')
 Base.metadata.create_all(engine)
