@@ -112,7 +112,7 @@ def get_posts():
 
 def main():
     pet_api = PetAPI()
-    pets = pet_api.get_animals(pages=20)
+    pets = pet_api.get_animals(pages=200)
     populate_database(pets)
     pet_api.close()
 
